@@ -10,14 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200228210805) do
+ActiveRecord::Schema.define(version: 20200308180956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "advisements", force: :cascade do |t|
+    t.decimal "integer"
+    t.boolean "is_overruled?"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "combs", force: :cascade do |t|
+    t.decimal "pollen_glob_target"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "nectars", force: :cascade do |t|
+    t.integer "quantity"
+    t.bigint "comb_id"
+    t.bigint "worker_bee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comb_id"], name: "index_nectars_on_comb_id"
+    t.index ["worker_bee_id"], name: "index_nectars_on_worker_bee_id"
+  end
+
+  create_table "pollen_globs", force: :cascade do |t|
+    t.decimal "quantity"
+    t.bigint "comb_id"
+    t.bigint "worker_bee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["comb_id"], name: "index_pollen_globs_on_comb_id"
+    t.index ["worker_bee_id"], name: "index_pollen_globs_on_worker_bee_id"
+  end
 
   create_table "worker_bees", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "nectars", "combs"
+  add_foreign_key "nectars", "worker_bees"
+  add_foreign_key "pollen_globs", "combs"
+  add_foreign_key "pollen_globs", "worker_bees"
 end
