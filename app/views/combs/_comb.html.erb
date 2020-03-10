@@ -1,0 +1,13 @@
+<div class="comb">
+
+	<h3 class="comb-title">Comb <%= comb.id %></h3>
+
+	<ol>
+		<% comb.worker_bees.each do |worker_bee| %>
+			<li>
+				<%= link_to "Worker Bee #{worker_bee.id} (#{worker_bee.id}-C#{comb.id})", 
+						    worker_bee_path(id: worker_bee.id, comb_id: comb.id) %>
+			</li>
+		<% end %>
+	</ol>
+</div>

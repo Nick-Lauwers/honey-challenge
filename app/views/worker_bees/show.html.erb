@@ -1,0 +1,137 @@
+<div class="background">
+	<div class="container">
+
+		<%= link_to "Return to Main Page", root_path, class: "return-link" %>
+
+		<h2 class="worker-bee-title">Worker Bee <%= params[:id] %>, Comb <%= params[:comb_id] %></h2>
+
+		<h3><%= params[:id] %>-C<%= params[:comb_id] %></h3>
+
+		<figure class="highcharts-figure">
+
+		    <div id="container"></div>
+
+		    <p class="highcharts-description">
+		        <strong>Figure 1:</strong> PollenGlob production vs Nectar consumption for Worker Bee <%= params[:id] %>
+		        in Comb <%= params[:comb_id] %>.
+		    </p>
+		</figure>
+
+		<ul class="nav nav-tabs inbox-tabs">
+          
+          <li class="active">
+            <a href="#regular" data-target="#regular" data-toggle="tab">
+              Regular
+            </a>
+          </li>
+          
+          <li>
+            <a href="#enhanced" data-target="#enhanced" data-toggle="tab">
+              Enhanced
+            </a>
+          </li>
+        </ul>
+      
+        <div class="tab-content inbox-tab-content">
+          <div class="tab-pane fade active in" id="regular">
+            <table class="measurements">
+
+				<tr>
+					<td><strong>Date</strong></td>
+					<td><strong>PollenGlobs</strong></td>
+					<td><strong>Nectar</strong></td>
+					<td><strong>Advisement</strong></td>
+					<td><strong>% Accepted</strong></td>
+					<td><strong>Overrule</strong></td>
+				</tr>
+
+				<% @measurements.reverse.each do |measurement| %>
+					<tr>
+
+						<td><%= measurement[:date].strftime("%m-%d-%y") %></td>
+
+						<td>
+							<% if measurement[:pollen_globs] %>
+								<%= measurement[:pollen_globs] %> p/g
+							<% else %>
+								n / a
+							<% end %>
+						</td>
+
+						<td><%= measurement[:nectar]%> units</td>
+
+						<td>
+							<% if measurement[:advisement] %>
+								<%= measurement[:advisement] %> units
+							<% else %>
+								n / a
+							<% end %>
+						</td>
+
+						<td><%= measurement[:perc_accepted] %></td>
+
+						<td>
+							<% if measurement == @measurements.last && 
+								  !Advisement.where(worker_bee_id: params[:id], comb_id: params[:comb_id]).last.is_overruled %>
+								<%= form_for Advisement.where(worker_bee_id: params[:id], comb_id: params[:comb_id]).last do |f| %>
+							    	<%= f.hidden_field :is_overruled, value: true %>
+							    	<%= f.submit 'Overrule' %>
+							  	<% end %>
+
+							<% elsif measurement == @measurements.last %>
+								<i>Overruled</i>
+							<% else %>
+								n / a
+							<% end %>			
+						</td>
+					</tr>
+				<% end %>
+			</table>
+	    </div>
+          
+        <div class="tab-pane fade" id="enhanced">
+            
+            <table class="measurements">
+
+				<tr>
+					<td><strong>ID</strong></td>
+					<td><strong>ID-CombID</strong></td>
+					<td><strong>Date</strong></td>
+					<td><strong>PollenGlobs</strong></td>
+					<td><strong>Nectar</strong></td>
+					<td><strong>Advisement</strong></td>
+					<td><strong>% Accepted</strong></td>
+				</tr>
+
+				<% @measurements.reverse.each do |measurement| %>
+					<tr>
+
+						<td><%= params[:id] %></td>
+						<td><%= params[:id] %>-Comb<%= params[:comb_id] %></td>
+						<td><%= measurement[:date].strftime("%m-%d-%y") %></td>
+
+						<td>
+							<% if measurement[:pollen_globs] %>
+								<%= measurement[:pollen_globs] %> p/g
+							<% else %>
+								n / a
+							<% end %>
+						</td>
+
+						<td><%= measurement[:nectar]%> units</td>
+
+						<td>
+							<% if measurement[:advisement] %>
+								<%= measurement[:advisement] %> units
+							<% else %>
+								n / a
+							<% end %>
+						</td>
+
+						<td><%= measurement[:perc_accepted] %> %</td>
+					</tr>
+				<% end %>
+			</table>
+        </div>
+    </div>
+</div>

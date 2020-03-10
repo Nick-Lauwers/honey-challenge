@@ -47,6 +47,9 @@ gem 'activerecord-import'
 gem 'dynamic_form'
 gem 'nested_form_fields'
 
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'gon'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
