@@ -1,3 +1,15 @@
+# Engineer's Notes
+
+### Completed By Nick Lauwers
+
+### Additional Technologies
+
+<img src="/app/assets/images/main-page.png">
+
+<img src="/app/assets/images/workbee-page-top.png">
+
+<img src="/app/assets/images/workbee-page-bottom.png">
+
 # Quick MVC rails app w/ graph
 
 ### Technologies explored (check the skeleton)
@@ -204,17 +216,17 @@ Example row structures below:
 
 ### Helpful checklist
 
-  * [ ] _Instantiate a **github repo** when you **begin the challenge**._
-  * [ ] Please **make the repo private**, and _invite us_.
-  * [ ] Make an initial skeleton 💀 state commit.
-  * [ ] **Commit frequently** and push at least at the end of each day worked.
-  * [ ] Please **provide a readme** (other than this one) explaining your
+  * [x] _Instantiate a **github repo** when you **begin the challenge**._
+  * [x] Please **make the repo private**, and _invite us_.
+  * [x] Make an initial skeleton 💀 state commit.
+  * [x] **Commit frequently** and push at least at the end of each day worked.
+  * [x] Please **provide a readme** (other than this one) explaining your
         decisions/actions where you have something to say.
-  * [ ] **Include screenshots** (in that readme) of what your mini app looks
+  * [x] **Include screenshots** (in that readme) of what your mini app looks
         like!
-  * [ ] Maybe (please) include some helpful seed data. `Faker` _could_ help you
+  * [x] Maybe (please) include some helpful seed data. `Faker` _could_ help you
         there.
-  * [ ] **Mention any other tech** you pulled in to help you if you did so.
+  * [x] **Mention any other tech** you pulled in to help you if you did so.
   * [x] Read this challenge readme.
 
 
