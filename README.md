@@ -4,11 +4,11 @@
 
 ### Additional Technologies
 
-<img src="/app/assets/images/main-page.png">
+<img src="/app/assets/images/screenshots/main-page.png">
 
-<img src="/app/assets/images/workbee-page-top.png">
+<img src="/app/assets/images/screenshots/workbee-page-top.png">
 
-<img src="/app/assets/images/workbee-page-bottom.png">
+<img src="/app/assets/images/screenshots/workbee-page-bottom.png">
 
 # Quick MVC rails app w/ graph
 
