@@ -2,7 +2,7 @@ document.addEventListener("turbolinks:load", function() {
 	Highcharts.chart('container', {
 
 	    title: {
-	        text: 'PollenGlop Production vs Nectar Consumption'
+	        text: 'PollenGlob Production vs Nectar Consumption'
 	    },
 
 	    xAxis: {
@@ -20,7 +20,7 @@ document.addEventListener("turbolinks:load", function() {
 	            }
 	        },
 	        title: {
-	            text: 'PollenGlop Production',
+	            text: 'PollenGlob Production',
 	            style: {
 	                color: Highcharts.getOptions().colors[1]
 	            }

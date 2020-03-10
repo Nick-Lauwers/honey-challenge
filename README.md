@@ -1,14 +1,87 @@
 # Engineer's Notes
 
-### Completed By Nick Lauwers
-
 ### Additional Technologies
+* **Bootstrap**
+
+---
+
+### Screenshots
 
 <img src="/app/assets/images/screenshots/main-page.png">
 
+**Figure 1:** The main page of the Quality Management System. All Combs within a hive are 
+listed. Below each Comb are listed the WorkerBees that service that Comb. In this case, 
+there are three WorkerBees, all of which work in both Combs 1 and 2 at some point. They 
+are identified by their unique-ids (e.g. WBee1-C1).
+
+
 <img src="/app/assets/images/screenshots/workbee-page-top.png">
 
+**Figure 2:** A graph of PollenGlob production versus Nectar consumption.
+
+
 <img src="/app/assets/images/screenshots/workbee-page-bottom.png">
+
+**Figure 3:** A table displaying Advisements and the Percent of Accepted Advisements. 
+Added to the top row of the table is an "Overrule" button. It permits the user to overrule 
+the most recent Advisement. When clicked, the button updates the 'is_overruled' boolean 
+attribute of the Advisement object to true. By default, this value is set to false. 
+Only the top row of the table features the "Overrule" button; previous Advisements cannot 
+be overruled as their dates have already passed.
+
+---
+
+### A Quick Note
+I have done my best to include well-detailed comments throughout the code. These comments 
+can provide further clarification if any questions arise.
+
+---
+
+### Data Models
+The data models of the application are:
+* **WorkerBee:** :id;
+* **Comb:** :id, :pollen_glob_target (i.e. the SweetSpot);
+* **PollenGlob:** :id, :quantity, :worker_bee_id, :comb_id;
+* **Nectar:** :id, :quantity, :worker_bee_id, :comb_id;
+* **Advisement:** :quantity, :is_overruled, :worker_bee_id, :comb_id;
+
+Since PollenGlobs, Nectar, and Advisements are contained in separate database tables, it was 
+neccessary to combine them into a single data structure before presenting them on the WorkerBee 
+page. The data was combined into an array of hashes of the form:
+
+measurements = [ { date: "a", pollen_globs: "b", nectar: "c", advisement: "d", perc_accepted: "e" }, 
+                 { date: "f", pollen_globs: "g", nectar: "h", advisement: "i", perc_accepted: "j" }, ...]  
+
+By iterating through the "measurements" array, PollenGlob, Nectar, and Advisement objects were
+consolidated into a single table.
+
+Alternatively, a single data model, **Measurement**, could have been used to store PollenGlob, 
+Nectar, and Advisement objects together in one database table. In that case, a "measurements" 
+array would not be needed. However, this would have created complexity elsewhere and reduced the
+overall flexibility of the database.
+
+---
+
+### Seed Data
+Seed data was generated for two Combs and three WorkerBees. All of the WorkerBees worked in both 
+Combs 1 and 2 at some point. PollenGlobs were randomly selected from a range of 5.0 - 17.9 p/g.
+Nectar was randomly selected from a range of 200 - 20,000 units, but with preference given to the
+active Advisement amount. Finally, Advisements were selected from a range of 200 - 20,000 units.
+
+---
+
+### Areas of Improvement
+
+Due to time constraints, I was unable to complete all that I wanted to. If given additional
+time, I would have adjusted the following:
+* **Testing:** I would test the functionality of the 'calculate_perc_accepted' function in the 
+WorkerBees Controller Concern. From the seed data, I can see that the function performs properly. 
+However, a test would add further confidence.
+* **Overrule Buttom:** Currently, the "Overrule" button cannot be deselected. If given more
+time, I would allow the user to deselect the button and return the "is_overruled" attribute
+of the Acceptance object to false.
+
+---
 
 # Quick MVC rails app w/ graph
 
