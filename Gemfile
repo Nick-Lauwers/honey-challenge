@@ -48,7 +48,6 @@ gem 'dynamic_form'
 gem 'nested_form_fields'
 
 gem 'bootstrap-sass', '~> 3.4.1'
-gem 'gon'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -75,4 +74,6 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+
+  gem 'shoulda-matchers', '~> 3.1'
 end

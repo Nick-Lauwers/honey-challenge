@@ -2,6 +2,7 @@
 
 ### Additional Technologies
 * **Bootstrap**
+* **Shoulda Matchers Gem**
 
 ---
 
