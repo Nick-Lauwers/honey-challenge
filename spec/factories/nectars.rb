@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :nectar do
-    quantity { 1 }
-    comb { nil }
-    worker_bee { nil }
+    quantity { rand(200..20000).round(-2) }
+    comb_id { nil }
+    worker_bee_id { nil }
   end
 end

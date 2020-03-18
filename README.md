@@ -3,6 +3,7 @@
 ### Additional Technologies
 * **Bootstrap**
 * **Shoulda Matchers Gem**
+* **Database Cleaner Gem**
 
 ---
 
@@ -68,6 +69,12 @@ Seed data was generated for two Combs and three WorkerBees. All of the WorkerBee
 Combs 1 and 2 at some point. PollenGlobs were randomly selected from a range of 5.0 - 17.9 p/g.
 Nectar was randomly selected from a range of 200 - 20,000 units, but with preference given to the
 active Advisement amount. Finally, Advisements were selected from a range of 200 - 20,000 units.
+
+---
+
+### Testing
+Both model and controller tests have been done using RSpec. Run all 21 tests using "bundle exec 
+rspec".
 
 ---
 

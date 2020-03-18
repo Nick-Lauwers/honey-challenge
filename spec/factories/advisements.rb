@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :advisement do
-    quantity { 1 }
-    is_overruled? { false }
+    quantity { rand(200..20000).round(-2) }
+    is_overruled { false }
+    comb_id { nil }
+    worker_bee_id { nil }
   end
 end
