@@ -6,8 +6,6 @@
 * **Postgres** ('~> 11.2')
 * **HighCharts JS** — [here's an example][highcharts example]
 * **Faker**
-* _Don't_ use a frontend library like **React**
-* Whatever engineering principles you think help you solve this best
 
 ---
 
@@ -101,11 +99,6 @@ Display relevant `WorkerBee` information useful to identify the WorkerBee within
 the current Comb. Use your best judgment for information the Queen and her
 Cabeenet would like to see.
 
-**_NB:_** We use [Slim templating](http://slim-lang.com/) for our main frontend
-          setup, which is an alternative to erb with "simpler" syntax. It is
-          fairly easy to pick up, and fun and/or useful depending on personal
-          preferences, but not mandatory.
-
 #### Graph
   * Located at the **top portion** of the page.
   * Display both PollenGlobs and Nectar in one chart.
@@ -188,45 +181,3 @@ Example row structures below:
 |02-29-20|  10.3 p/g   | 900 units |     n/a    |                     |
 |02-27-20|  n/a        | 900 units |  900 units |**[Edit Advisement]**|
 |        |             |    ...    |            |                     |
-
----
-
-### Some Advice
-  * Don't mess with timestamps for `date`. Don't hack around with `created_at`
-    or anything, use a single-responsibility column.
-  * Separate the calculation of `% Accepted` to an ActiveSupport Concern: don't
-    clutter the model(s)/controller(s) with this logic. (It's a simple way
-    to improve readability of larger, more complicated applications.)
-  * Ensure the high charts function is clean and makes sense for this mini app
-  * Leaning heavily on docs examples is fine: just ensure good, unique code
-  * Learn some new things
-  * Have fun!
-
-### Helpful checklist
-
-  * [x] _Instantiate a **github repo** when you **begin the challenge**._
-  * [x] Please **make the repo private**, and _invite us_.
-  * [x] Make an initial skeleton 💀 state commit.
-  * [x] **Commit frequently** and push at least at the end of each day worked.
-  * [x] Please **provide a readme** (other than this one) explaining your
-        decisions/actions where you have something to say.
-  * [x] **Include screenshots** (in that readme) of what your mini app looks
-        like!
-  * [x] Maybe (please) include some helpful seed data. `Faker` _could_ help you
-        there.
-  * [x] **Mention any other tech** you pulled in to help you if you did so.
-  * [x] Read this challenge readme.
-
-
-### Our Part
-
-  * We'll clone your app locally and run the usual `bundle exec...` `foo`,
-    `bar`, etc. to set up the app and db so we can have a look at what you've
-    built.
-  * We ~~probably~~ won't fix 🚫🛠 anything or run anything to clean up code:
-  * Please ensure style/readability 📖✅ is decently tidy!
-
-### Thank you for reading, and Happbee coding 🐝 🙌 🐝
-
-
-[highcharts example]: https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/demo/bar-stacked/
