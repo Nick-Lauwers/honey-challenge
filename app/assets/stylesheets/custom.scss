@@ -42,13 +42,13 @@ span {
 }
 
 ol {
-	list-style: none;
-  	padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .background { 
-	background-color: $beige;
-  	overflow: auto;
+  background-color: $beige;
+  overflow: auto;
 }
 
 .container {
@@ -58,9 +58,9 @@ ol {
 }
 
 .image {
-	object-fit: cover;
-	height: 100%;
-	width: 100%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .alert-success,
@@ -77,41 +77,41 @@ ol {
 /* root */
 
 .hero {
-	height: 500px;
-	max-width: 1008px;
-	margin: 10em auto;
-	position: relative;
+  height: 500px;
+  max-width: 1008px;
+  margin: 10em auto;
+  position: relative;
 }
 
 .hero-text {
-	width: 50%;
-	position: absolute;
-	z-index: 1;
+  width: 50%;
+  position: absolute;
+  z-index: 1;
 }
 
 .hero-title {
-	margin: 0.5em 0 0.3em;
+  margin: 0.5em 0 0.3em;
 }
 
 .hero-description {
-	width: 80%;
-	margin-bottom: 1.5em;
+  width: 80%;
+  margin-bottom: 1.5em;
 }
 
 .hero-image {
-	height: 100%;
-	width: 700px;
-	position: absolute;
-	top: 0;
-	right: 0;
+  height: 100%;
+  width: 700px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .comb {
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .comb-title {
-	margin-bottom: 0.3em
+  margin-bottom: 0.3em
 }
 
 /* identification page */
@@ -130,7 +130,7 @@ ol {
 }
 
 #container {
-    height: 400px;
+  height: 400px;
 }
 
 .highcharts-description {
