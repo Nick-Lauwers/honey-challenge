@@ -172,7 +172,7 @@ Example row structures below:
 
 ##### Optional Regular view mode (allow toggle between two table view modes):
   * Include a toggle feature between this mode and the enhanced mode.
-  * Show a more accessible table with less information in this mode.
+  * Show a more accessible table with less information.
   * Allow for Advisements to be Overruled by a Cabeenet member via a button and
     a form delivered in any chosen medium (modal/partial/view/etc).
 
